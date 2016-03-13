@@ -18,6 +18,8 @@ nginx:
     environment:
      - DC_NAME=dc1
      - SKIP_PSWATCH=true
+    #volumes:
+    # - ./etc/ssl/nginx/:/etc/ssl/nginx/
     links:
      - consul:consul
     ports:
