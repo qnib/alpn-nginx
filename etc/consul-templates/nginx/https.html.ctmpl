@@ -11,6 +11,6 @@
 </style>
 </head>
 <body>
-<h1>This is served via HTTP from {{ env "HOSTNAME" }}!</h1>
+<h1>This is served via HTTPS from {{ env "HOSTNAME" }}!</h1>
 </body>
 </html>
