@@ -1,0 +1,7 @@
+test:
+    image: qnib/alpn-consul
+    dns: 127.0.0.1
+    hostname: test
+    container_name: test
+    external_links:
+     - consul:consul
