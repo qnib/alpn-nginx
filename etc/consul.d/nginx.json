@@ -6,7 +6,7 @@
         "tags": ["http"],
         "port": 80,
         "checks": [{
-            "script": "curl -I http://localhost:80",
+            "script": "echo '# curl -sI http://localhost:80' ; curl -sI http://localhost:80",
             "interval": "10s"
         }]
     },
@@ -16,7 +16,7 @@
         "tags": ["https"],
         "port": 443,
         "checks": [{
-            "script": "curl -I -k https://localhost:443",
+            "script": "echo '# curl -sI -k https://localhost:443' ; curl -sI -k https://localhost:443",
             "interval": "10s"
         }]
     }
