@@ -11,3 +11,5 @@ ADD etc/supervisord.d/nginx.ini \
     /etc/supervisord.d/
 ADD opt/qnib/nginx/bin/start.sh /opt/qnib/nginx/bin/
 
+ONBUILD RUN echo "!!!!! Please use your own certificates :)" && \
+            rm -f etc/ssl/nginx/certificate.*
