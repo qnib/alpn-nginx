@@ -10,7 +10,7 @@ consul:
 
 nginx:
     hostname: nginx
-    image: qnib/alpn-nginx
+    image: ${BUILD_IMG_NAME}
     dns: 127.0.0.1
     environment:
      - DC_NAME=dc1

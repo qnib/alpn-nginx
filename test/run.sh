@@ -3,6 +3,7 @@
 set -e
 
 export TEST_CONTAINER=$(echo nginx_test_$(date +%s))
+test -z ${BUILD_IMG_NAME}
 
 echo "## start stack"
 docker-compose up -d
