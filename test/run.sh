@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -e
+set -xe
 
 export TEST_CONTAINER=$(echo nginx_test_$(date +%s))
 test -z ${BUILD_IMG_NAME}
