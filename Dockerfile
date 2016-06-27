@@ -1,5 +1,21 @@
 FROM qnib/alpn-rsyslog
 
+
+ARG vcs_type="git"
+ARG vcs_url="Unknown"
+ARG vcs_ref="Unknown"
+ARG vcs_branch="Unknown"
+ARG build_date="Unknown"
+ARG build_rev="Unknown"
+
+LABEL org.label-schema.vcs-type=git \
+      org.label-schema.vcs-url=$vcs_url \
+      org.label-schema.vcs-ref=$vcs_ref \
+      org.label-schema.vcs-branch=$vcs_branch \
+      org.label-schema.docker.dockerfile=/Dockerfile \
+      org.label-schema.build-date=$build_date \
+      org.label-schema.build-rev=$build_rev
+
 RUN apk upgrade --update && \
     apk add nginx && \
     rm -rf /var/cache/apk/*
