@@ -21,7 +21,7 @@ RUN apk upgrade --update && \
     rm -rf /var/cache/apk/*
 
 ADD etc/nginx/nginx.conf /etc/nginx/
-ADD etc/nginx/conf.d/default.conf /etc/nginx/conf.d/
+ADD etc/consul-templates/nginx/default.conf.ctmpl /etc/consul-templates/nginx/
 ADD etc/ssl/nginx/certificate.crt etc/ssl/nginx/certificate.key /etc/ssl/nginx/
 ADD etc/supervisord.d/nginx.ini \
     /etc/supervisord.d/

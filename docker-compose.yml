@@ -13,7 +13,7 @@ consul:
 nginx:
     hostname: nginx
     container_name: nginx
-    image: qnib/alpn-nginx
+    image: dock.gaikai.org/qnib/alpn-nginx
     dns: 127.0.0.1
     environment:
      - DC_NAME=dc1
