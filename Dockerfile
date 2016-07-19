@@ -1,5 +1,8 @@
 FROM qnib/alpn-rsyslog
 
+ENV NGINX_HTTPS_PORT=443 \
+    NGINX_HTTP_PORT=80
+
 RUN apk upgrade --update && \
     apk add nginx && \
     rm -rf /var/cache/apk/*
@@ -13,10 +16,8 @@ ADD opt/qnib/nginx/bin/start.sh /opt/qnib/nginx/bin/
 ADD etc/consul-templates/nginx/http.html.ctmpl \
     etc/consul-templates/nginx/https.html.ctmpl \
     /etc/consul-templates/nginx/
-ONBUILD RUN echo "!!!!! Please use your own certificates :)" && \
-            rm -f /etc/ssl/nginx/certificate.* && \
-            echo "!!!!! ...and your own nginx-config" && \
-            mv /etc/nginx/conf.d/default.conf /etc/nginx/conf.d/default.conf.example
+ONBUILD RUN echo "!!!!! Please use your own certificates :)" \
+         && rm -f /etc/ssl/nginx/certificate.* 
 
 ADD etc/consul.d/nginx.json \
     etc/consul.d/nginx-ssl.json \
